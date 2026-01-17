@@ -14,33 +14,37 @@ This satisfies the key properties looked for in Agentic AI:
 - Temporal: Day counter given as it understands the days are changing
 
 ## System Architecture
-┌───────────────┐
-│ Frontend │
-│ (HTML + JS) │
-└───────┬───────┘
-│ User Input / Feedback
-▼
-┌───────────────┐
-│ Flask API │
-│ (backend) │
-└───────┬───────┘
-│
-▼
-┌───────────────────────────┐
-│ Agent Layer │
-│ │
-│ Planner → Analyzer → Decision
-│ │
-└───────────────┬───────────┘
-│
-▼
-┌────────────────┐
-│ Agent Memory │
-│ (JSON files) │
-│ plan.json │
-│ meta.json │
-│ feedback.json │
-└────────────────┘
+System Architecture
+===================
+
++--------------------+        +----------------------+
+|      Frontend      |        |   User Input /       |
+|   (HTML + JS)      |<------>|   End-of-Day         |
++--------------------+        |   Feedback            |
+           |                  +----------------------+
+           |
+           v
++----------------------------------------------------+
+|                   Flask API                        |
+|                   (Backend)                        |
++----------------------------------------------------+
+           |
+           v
++----------------------------------------------------+
+|                    Agent Layer                     |
+|                                                    |
+|   Planner  -->  Analyzer  -->  Decision Agent      |
+|                                                    |
++----------------------------------------------------+
+           |
+           v
++----------------------------------------------------+
+|                  Agent Memory                      |
+|                                                    |
+|   plan.json   |   meta.json   |   feedback.json    |
+|                                                    |
++----------------------------------------------------+
+
 
 ## Agent Components
 
