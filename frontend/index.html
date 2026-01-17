@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Study Planner Agent</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>AI Study Planner Agent</h2>
+
+<label>Days Left:</label>
+<input type="number" id="days" /><br><br>
+
+<label>Hours per Day:</label>
+<input type="number" id="hours" /><br><br>
+
+<label>Subjects (comma separated):</label>
+<input type="text" id="subjects" /><br><br>
+
+<button onclick="generatePlan()">Generate Plan</button>
+
+<h3>Study Plan for Today (per subject)</h3>
+<pre id="result"></pre>
+
+<h3>Daily Study Feedback</h3>
+
+<label>Enter actual hours spent today (comma separated, same order as subjects):</label><br>
+<input type="text" id="feedback" placeholder="e.g. 3, 1.5, 2, 1"><br><br>
+
+<button onclick="submitFeedback()">Submit Feedback</button>
+
+<h3>Analysis</h3>
+<pre id="analysis"></pre>
+
+<h3>Tomorrow's Plan</h3>
+<pre id="nextPlan"></pre>
+
+<button onclick="startNextDay()">Start Next Day</button>
+
+<h3>Today's Plan</h3>
+<pre id="todayPlan"></pre>
+
+
+<script src="script.js"></script>
+</body>
+</html>
